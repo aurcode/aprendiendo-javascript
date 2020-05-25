@@ -1,2 +1,2 @@
-# programacion-basica-platzi
+# aprendiendo javascript
 Mis primeros pasos en javascript 
