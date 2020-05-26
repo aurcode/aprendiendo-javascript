@@ -17,10 +17,10 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 }
 
 linea_ancho = ancho - 1
-dibujarLinea("black", 1, 1, 1, 299);
-dibujarLinea("black", 300, 1, 1, 1);
-dibujarLinea("black", 299, 1, 299, 299);
-dibujarLinea("black", 299, 299, 1, 299);
+dibujarLinea("black", 1, 1, 1, linea_ancho);
+dibujarLinea("black", linea_ancho, 1, 1, 1);
+dibujarLinea("black", linea_ancho, 1, linea_ancho, linea_ancho);
+dibujarLinea("black", linea_ancho, linea_ancho, 1, linea_ancho);
 
 function dibujoPorClick()
 {
@@ -34,8 +34,14 @@ for (l = 0; l < lineas; l++ )
 {
 	yi = espacio * l;
 	xf = espacio * (1 + l);
-	dibujarLinea("red", 0, yi, xf, 300);
+	dibujarLinea("red", 0, yi, xf, linea_ancho);
 }
 
-}
 
+for (l = 0; l < lineas; l++ )
+{
+	yi = espacio * l;
+	xf = espacio * (1 + l);
+	dibujarLinea("red", 0, yi, xf, linea_ancho);
+}
+}
