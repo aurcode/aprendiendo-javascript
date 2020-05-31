@@ -106,7 +106,14 @@ function dibujarCerdos()
 {
 	if (cerdo.cargaOK == true) 
 		{
-			papel.drawImage(cerdo.objeto, 300, 300);
+			for(var v=0; v < cantidadDeCerdos; v++)
+			{
+			var x = aleatorio(0, 7);
+			var y = aleatorio(0, 7);
+			var x = x * 60;
+			var y = y * 60;
+			papel.drawImage(cerdo.objeto, x, y);
+			}
 		}
 }
 
