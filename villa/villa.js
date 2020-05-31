@@ -1,6 +1,8 @@
 var vp = document.getElementById("villa");
 var papel = vp.getContext("2d");
 var cantidadDeVacas = aleatorio(-4, 10);
+var cantidadDePollos = aleatorio(-4, 10);
+var cantidadDeCerdos = aleatorio(-4, 10);
 
 var fondo = {
 	url: "tile.png",
