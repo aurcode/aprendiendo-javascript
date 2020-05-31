@@ -1,43 +1,97 @@
 var vp = document.getElementById("villa");
 var papel = vp.getContext("2d");
 
-var fondo = new Image();
-fondo.src = "tile.png";
-fondo.addEventListener("load", dibujar);
+var fondo = {
+	url: "tile.png",
+	cargaOK: false
+};
 
-var vaca = new Image();
-vaca.src = "vaca.png";
-vaca.addEventListener("load", dibujarVacas);
+var vaca = {
+	url: "vaca.png",
+	cargaOK: false
+};
 
-var cerdo = new Image();
-cerdo.src = "cerdo.png";
-cerdo.addEventListener("load", dibujarCerdos);
+var pollo = {
+	url: "pollo.png",
+	cargaOK: false
+};
 
-var pollo = new Image();
-pollo.src = "pollo.png";
-vaca.addEventListener("load", dibujarPollos);
+var cerdo = {
+	url: "cerdo.png",
+	cargaOK: false
+};
+
+fondo.objeto = new Image();
+fondo.objeto.src = fondo.url;
+fondo.objeto.addEventListener("load", cargarFondo);
+
+vaca.objeto = new Image();
+vaca.objeto.src = vaca.url;
+vaca.objeto.addEventListener("load", cargarVacas);
+
+pollo.objeto = new Image();
+pollo.objeto.src = pollo.url;
+pollo.objeto.addEventListener("load", cargarPollos);
+
+cerdo.objeto = new Image();
+cerdo.objeto.src = cerdo.url;
+cerdo.objeto.addEventListener("load", cargarCerdos);
+
+function cargarFondo()
+{
+	fondo.cargaOK = true;
+	dibujar()
+}
+
+function cargarVacas()
+{
+	vaca.cargaOK = true
+	dibujarVacas();
+}
+
+function cargarPollos()
+{
+	pollo.cargaOK = true
+	dibujarPollos();
+}
+
+function cargarCerdos()
+{
+	cerdo.cargaOK = true
+	dibujarCerdos();
+}
 
 function dibujar()
 {
-	papel.drawImage(fondo, 0, 0);
+	if (fondo.cargaOK == true) 
+	{
+		papel.drawImage(fondo.objeto, 0, 0);
+	}
 }
 
 function dibujarVacas()
 {
-	papel.drawImage(vaca, 10, 10);
-}
-
-function dibujarCerdos()
-{
-	papel.drawImage(cerdo, 10, 300);
+	if (vaca.cargaOK == true) 
+		{
+			papel.drawImage(vaca.objeto, 10, 10);
+		}
 }
 
 function dibujarPollos()
 {
-	papel.drawImage(pollo, 300, 150);
+	if (pollo.cargaOK == true) 
+		{
+			papel.drawImage(pollo.objeto, 150, 100);
+		}
 }
 
-
+function dibujarCerdos()
+{
+	if (cerdo.cargaOK == true) 
+		{
+			papel.drawImage(cerdo.objeto, 300, 300);
+		}
+}
 
 function aleatorio(min, maxi)
 {
