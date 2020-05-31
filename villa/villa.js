@@ -1,5 +1,6 @@
 var vp = document.getElementById("villa");
 var papel = vp.getContext("2d");
+var cantidadDeVacas = aleatorio(0, 15);
 
 var fondo = {
 	url: "tile.png",
@@ -73,9 +74,12 @@ function dibujarVacas()
 {
 	if (vaca.cargaOK == true) 
 		{
+			for(var v=0; v < cantidadDeVacas; v++)
+			{
 			var x = aleatorio(0, 420);
 			var y = aleatorio(0, 420);
 			papel.drawImage(vaca.objeto, x, y);
+			}
 		}
 }
 
