@@ -1,6 +1,8 @@
 var vp = document.getElementById("villa");
 var papel = vp.getContext("2d");
 var cantidadDeVacas = aleatorio(-4, 10);
+var cantidadDePollos = aleatorio(-4, 10);
+var cantidadDeCerdos = aleatorio(-4, 10);
 
 var fondo = {
 	url: "tile.png",
@@ -89,7 +91,14 @@ function dibujarPollos()
 {
 	if (pollo.cargaOK == true) 
 		{
-			papel.drawImage(pollo.objeto, 150, 100);
+			for(var v=0; v < cantidadDePollos; v++)
+			{
+			var x = aleatorio(0, 7);
+			var y = aleatorio(0, 7);
+			var x = x * 60;
+			var y = y * 60;
+			papel.drawImage(pollo.objeto, x, y);
+			}
 		}
 }
 
@@ -97,7 +106,14 @@ function dibujarCerdos()
 {
 	if (cerdo.cargaOK == true) 
 		{
-			papel.drawImage(cerdo.objeto, 300, 300);
+			for(var v=0; v < cantidadDeCerdos; v++)
+			{
+			var x = aleatorio(0, 7);
+			var y = aleatorio(0, 7);
+			var x = x * 60;
+			var y = y * 60;
+			papel.drawImage(cerdo.objeto, x, y);
+			}
 		}
 }
 
