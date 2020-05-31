@@ -91,7 +91,14 @@ function dibujarPollos()
 {
 	if (pollo.cargaOK == true) 
 		{
-			papel.drawImage(pollo.objeto, 150, 100);
+			for(var v=0; v < cantidadDePollos; v++)
+			{
+			var x = aleatorio(0, 7);
+			var y = aleatorio(0, 7);
+			var x = x * 60;
+			var y = y * 60;
+			papel.drawImage(pollo.objeto, x, y);
+			}
 		}
 }
 
