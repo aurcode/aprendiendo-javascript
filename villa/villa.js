@@ -73,7 +73,9 @@ function dibujarVacas()
 {
 	if (vaca.cargaOK == true) 
 		{
-			papel.drawImage(vaca.objeto, 10, 10);
+			var x = aleatorio(0, 420);
+			var y = aleatorio(0, 420);
+			papel.drawImage(vaca.objeto, x, y);
 		}
 }
 
