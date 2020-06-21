@@ -37,11 +37,4 @@ for (l = 0; l < lineas; l++ )
 	dibujarLinea("red", 0, yi, xf, linea_ancho);
 }
 
-
-for (l = 0; l < lineas; l++ )
-{
-	yi = espacio * l;
-	xf = espacio * (1 + l);
-	dibujarLinea("red", 0, yi, xf, linea_ancho);
-}
 }

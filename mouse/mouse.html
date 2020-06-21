@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dibujando con flechas</title>
+</head>
+<body>
+	<h1>Lienzo de dibujo</h1>
+	
+	<label for="muestrario">Color:</label>
+	<input type="color" value="#ff0000" id="muestrario">
+
+		<form action="/action_page.php" method="get">
+	  		<label for="vol">Selecciona el tamaño del pincel: </label>
+	 	 	<input type="range" id="vol" name="vol" min="1" max="50">
+		</form>
+	<canvas width="800" height="600" id="area_de_dibujo"> </canvas>
+	<script src="eventos_de_mouse.js"></script>
+</body>
+</html>

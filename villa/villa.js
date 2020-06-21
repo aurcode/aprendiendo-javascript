@@ -19,22 +19,22 @@ var xPollo = new Array();
 var yPollo = new Array();
 
 var fondo = {
-  url: "tile.png",
+  url: "img/tile.png",
   cargaOK: false
 };
 
 var vaca = {
-  url: "vaca.png",
+  url: "img/vaca.png",
   cargaOK: false
 };
 
 var pollo = {
-  url: "pollo.png",
+  url: "img/pollo.png",
   cargaOK: false
 };
 
 var cerdo = {
-  url: "cerdo.png", 
+  url: "img/cerdo.png", 
   cargaOK: false, 
   UP: 38, 
   DOWN: 40, 
@@ -43,7 +43,7 @@ var cerdo = {
 };
 
 var lobo = {
-  url: "lobo.png",
+  url: "img/lobo.png",
   cargaOK: false,
   UP: 38,
   DOWN: 40,

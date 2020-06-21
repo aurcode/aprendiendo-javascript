@@ -20,6 +20,13 @@ var papel = cuadrito.getContext("2d");
 var x = ancho/2;
 var y = largo/2;
 
+console.log(papel)
+
+//variables de color
+var muestrario;
+var colorPredeterminado = "#ff0000";
+window.addEventListener("load", startup, false);
+
 //Función para dibujar
 function dibujarLinea(color, grosor_del_lienzo, xinicial, yinicial, xfinal, yfinal, lienzo)
 {
@@ -30,6 +37,13 @@ function dibujarLinea(color, grosor_del_lienzo, xinicial, yinicial, xfinal, yfin
 	lienzo.lineTo(xfinal, yfinal);
 	lienzo.stroke();
 	lienzo.closePath();
+}
+
+// Seleccionar color
+function startup() {
+  muestrario = document.querySelector("#muestrario");
+  muestrario.value = colorPredeterminado;
+  muestrario.select();
 }
 
 //Marco del lienzo
@@ -44,13 +58,12 @@ dibujarLinea("black", 5, linea_ancho, linea_largo, 1, linea_largo, papel);
 //Funcion para que me reconozca la letra y en base a eso me dibuje
 function dibujarTeclado(evento)
 {
-	var colorcito = "blue"
-	var grosorcito = 3
-	var movimiento = 10
+	var colorcito = event.target.value;
+	var grosorcito = 5;
+	var movimiento = 10;
 
 	switch(evento.keyCode)
 	{
-		
 		case teclas.UP:
 			dibujarLinea(colorcito, grosorcito, x, y, x, y - movimiento, papel);
 			y = y - movimiento;
@@ -75,6 +88,5 @@ function dibujarTeclado(evento)
 		default:
 			console.log("Otra tecla");
 		break;
-
 	}
 }
